@@ -1,15 +1,21 @@
-# Welcome to NoteChat!
+# Welcome to my Custom Agentic RAG App
 
-NoteChat is an interactive Retrieval-Augmented Generation (RAG) app that lets you have conversations with your documents. Simply upload your file, ask any question, and watch the AI fetch relevant context from your notes in real-time.
+This is an interactive Agentic Retrieval-Augmented Generation (RAG) app that lets you have conversations with your documents. Agents determine when to query or not query the vector database based on user's input. This project is implemented in LangGraph; it comes with a in-memory checkpointer which enables us to maintain chat history for a single conversation using threads. Pinecone is used as a vector database with OpenAI's `text-embedding-3-large` embeddings. 
 
-This RAG system uses Streamlit for the user interface and file upload, leveraging AWS S3 for storage. It processes documents with PyPDFLoader and splits them into manageable chunks using RecursiveCharacterTextSplitter. The chunks are embedded via OpenAI’s model and indexed in a Pinecone vector database for efficient similarity search. When a query is received, relevant document fragments are retrieved and passed as context to a ChatOpenAI (GPT-4o-mini) model to generate an informed response.
 
 Steps to run:
 1. Create a virtual environment
 2. Install requirements.txt `pip install requirements.txt -r`
 3. Create a `.env` file and store all required keys.
-4. Run the file: `streamlit run main.py`
+4. Run the file: `streamlit run app.py`
 
-NoteChat is Live! Check it out now: https://notechat.streamlit.app/
+How to use:
+* On the side bar, upload the documents and click add to vector db.
+* Now the Agent is ready to chat!
+* Once done, if a document is not needed we can click delete vectors on the side bar.
 
-<img width="1497" alt="Welcome to NoteChat!" src="https://github.com/user-attachments/assets/624b1e90-2dd2-4241-9b26-c539aad152f9" />
+<img width="1505" alt="image" src="https://github.com/user-attachments/assets/fef723be-77eb-493f-be56-e812b3735e3c" />
+
+<img width="1503" alt="image" src="https://github.com/user-attachments/assets/2b298946-36e2-47f5-91d5-8ec4c90eb710" />
+
+
